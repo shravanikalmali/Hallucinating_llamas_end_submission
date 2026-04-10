@@ -1,0 +1,11 @@
+Evaluation Summary
+==================
+
+Books evaluated: 50
+Books skipped: 7
+Total predictions: 1280
+
+Overall Metrics:
+  EM: 0.0250
+  F1: 0.0498
+  ROUGE-L: 0.0492

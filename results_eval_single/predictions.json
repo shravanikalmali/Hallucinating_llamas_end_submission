@@ -1,0 +1,553 @@
+[
+  {
+    "book_id": "014de1a8802c05ff64efa047e9290fb7fccea2b4",
+    "question": "Who does Maskull accept an invitation from?",
+    "question_type": "who",
+    "prediction": "Nightspore",
+    "ground_truth": "Krag",
+    "reasoning": "llm_generation_phrase",
+    "confidence": 1.0,
+    "cross_encoder_score": 0.0,
+    "graph_confidence": 0.0,
+    "retrieved_chunk_ids": [],
+    "source_chunk_id": 182,
+    "metrics": {
+      "em": 0.0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "rouge_l": 0.0
+    }
+  },
+  {
+    "book_id": "014de1a8802c05ff64efa047e9290fb7fccea2b4",
+    "question": "Who is Krag an acquaintance of?",
+    "question_type": "who",
+    "prediction": "Nightspore",
+    "ground_truth": "Nightspore",
+    "reasoning": "llm_generation_phrase",
+    "confidence": 1.0,
+    "cross_encoder_score": 0.0,
+    "graph_confidence": 0.0,
+    "retrieved_chunk_ids": [],
+    "source_chunk_id": 75,
+    "metrics": {
+      "em": 1.0,
+      "f1": 1.0,
+      "bleu": 0.0,
+      "rouge_l": 1.0
+    }
+  },
+  {
+    "book_id": "014de1a8802c05ff64efa047e9290fb7fccea2b4",
+    "question": "Where is Maskull traveling to?",
+    "question_type": "where",
+    "prediction": "Tormance",
+    "ground_truth": "Tormance",
+    "reasoning": "llm_generation_phrase",
+    "confidence": 1.0,
+    "cross_encoder_score": 0.0,
+    "graph_confidence": 0.0,
+    "retrieved_chunk_ids": [],
+    "source_chunk_id": 82,
+    "metrics": {
+      "em": 1.0,
+      "f1": 1.0,
+      "bleu": 0.0,
+      "rouge_l": 1.0
+    }
+  },
+  {
+    "book_id": "014de1a8802c05ff64efa047e9290fb7fccea2b4",
+    "question": "When Maskull wakes up in Tormance, how many of his friends are with him?",
+    "question_type": "other",
+    "prediction": "no",
+    "ground_truth": "None",
+    "reasoning": "llm_generation_phrase",
+    "confidence": 1.0,
+    "cross_encoder_score": 0.0,
+    "graph_confidence": 0.0,
+    "retrieved_chunk_ids": [],
+    "source_chunk_id": 408,
+    "metrics": {
+      "em": 0.0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "rouge_l": 0.0
+    }
+  },
+  {
+    "book_id": "014de1a8802c05ff64efa047e9290fb7fccea2b4",
+    "question": "Who does Maskull realize he really is?",
+    "question_type": "who",
+    "prediction": "Yes",
+    "ground_truth": "Nightspore",
+    "reasoning": "who_relation_scored",
+    "confidence": 0.0,
+    "cross_encoder_score": 0.0,
+    "graph_confidence": 0.0,
+    "retrieved_chunk_ids": [],
+    "source_chunk_id": 298,
+    "metrics": {
+      "em": 0.0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "rouge_l": 0.0
+    }
+  },
+  {
+    "book_id": "014de1a8802c05ff64efa047e9290fb7fccea2b4",
+    "question": "Who does Krag claim that he is none as on Earth?",
+    "question_type": "who",
+    "prediction": "Listen",
+    "ground_truth": "Pain",
+    "reasoning": "who_relation_scored",
+    "confidence": 0.0,
+    "cross_encoder_score": 0.0,
+    "graph_confidence": 0.0,
+    "retrieved_chunk_ids": [],
+    "source_chunk_id": 37,
+    "metrics": {
+      "em": 0.0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "rouge_l": 0.0
+    }
+  },
+  {
+    "book_id": "014de1a8802c05ff64efa047e9290fb7fccea2b4",
+    "question": "What kind of ship does Maskull travel in?",
+    "question_type": "other",
+    "prediction": "No",
+    "ground_truth": "A crystal ship",
+    "reasoning": "llm_generation_phrase",
+    "confidence": 1.0,
+    "cross_encoder_score": 0.0,
+    "graph_confidence": 0.0,
+    "retrieved_chunk_ids": [],
+    "source_chunk_id": 402,
+    "metrics": {
+      "em": 0.0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "rouge_l": 0.0
+    }
+  },
+  {
+    "book_id": "014de1a8802c05ff64efa047e9290fb7fccea2b4",
+    "question": "Where is the abandoned observatory located?",
+    "question_type": "where",
+    "prediction": "Tormance",
+    "ground_truth": "In Scotland",
+    "reasoning": "location_scored",
+    "confidence": 0.0,
+    "cross_encoder_score": 0.0,
+    "graph_confidence": 0.0,
+    "retrieved_chunk_ids": [],
+    "source_chunk_id": 36,
+    "metrics": {
+      "em": 0.0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "rouge_l": 0.0
+    }
+  },
+  {
+    "book_id": "014de1a8802c05ff64efa047e9290fb7fccea2b4",
+    "question": "Whose death does he learn is coming soon?",
+    "question_type": "other",
+    "prediction": "Nightspore",
+    "ground_truth": "his own",
+    "reasoning": "llm_generation_phrase",
+    "confidence": 1.0,
+    "cross_encoder_score": 0.0,
+    "graph_confidence": 0.0,
+    "retrieved_chunk_ids": [],
+    "source_chunk_id": 688,
+    "metrics": {
+      "em": 0.0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "rouge_l": 0.0
+    }
+  },
+  {
+    "book_id": "014de1a8802c05ff64efa047e9290fb7fccea2b4",
+    "question": "Who gives the last revelation?",
+    "question_type": "other",
+    "prediction": "Maskull",
+    "ground_truth": "Krag",
+    "reasoning": "llm_generation_phrase",
+    "confidence": 1.0,
+    "cross_encoder_score": 0.0,
+    "graph_confidence": 0.0,
+    "retrieved_chunk_ids": [],
+    "source_chunk_id": 120,
+    "metrics": {
+      "em": 0.0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "rouge_l": 0.0
+    }
+  },
+  {
+    "book_id": "014de1a8802c05ff64efa047e9290fb7fccea2b4",
+    "question": "Why does Maskull accept an invitation Krag to go to Tormance?",
+    "question_type": "why",
+    "prediction": "ejaculated Nightspore in a strangled voice",
+    "ground_truth": "He longs for adventure. ",
+    "reasoning": "llm_generation_phrase",
+    "confidence": 1.0,
+    "cross_encoder_score": 0.0,
+    "graph_confidence": 0.0,
+    "retrieved_chunk_ids": [],
+    "source_chunk_id": 35,
+    "metrics": {
+      "em": 0.0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "rouge_l": 0.0
+    }
+  },
+  {
+    "book_id": "014de1a8802c05ff64efa047e9290fb7fccea2b4",
+    "question": "Who is Krag to Maskull?",
+    "question_type": "who",
+    "prediction": "a man",
+    "ground_truth": "A acquaintance of his friend Nightspore.",
+    "reasoning": "llm_generation_phrase",
+    "confidence": 1.0,
+    "cross_encoder_score": 0.0,
+    "graph_confidence": 0.0,
+    "retrieved_chunk_ids": [],
+    "source_chunk_id": 652,
+    "metrics": {
+      "em": 0.0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "rouge_l": 0.0
+    }
+  },
+  {
+    "book_id": "014de1a8802c05ff64efa047e9290fb7fccea2b4",
+    "question": "What sort of ship did Maskull, Krag, and Nightspore set of in?",
+    "question_type": "other",
+    "prediction": "No",
+    "ground_truth": "A crystal ship",
+    "reasoning": "llm_generation_phrase",
+    "confidence": 1.0,
+    "cross_encoder_score": 0.0,
+    "graph_confidence": 0.0,
+    "retrieved_chunk_ids": [],
+    "source_chunk_id": 683,
+    "metrics": {
+      "em": 0.0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "rouge_l": 0.0
+    }
+  },
+  {
+    "book_id": "014de1a8802c05ff64efa047e9290fb7fccea2b4",
+    "question": "Where did not crystal ship come from?",
+    "question_type": "where",
+    "prediction": "NOT FOUND",
+    "ground_truth": "From an abandoned observatory in Scotland.",
+    "reasoning": "symbolic_miss",
+    "confidence": 0.0,
+    "cross_encoder_score": 0.0,
+    "graph_confidence": 0.0,
+    "retrieved_chunk_ids": [],
+    "source_chunk_id": null,
+    "metrics": {
+      "em": 0.0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "rouge_l": 0.0
+    }
+  },
+  {
+    "book_id": "014de1a8802c05ff64efa047e9290fb7fccea2b4",
+    "question": "Who is missing from the ship when Maskull wakes?",
+    "question_type": "who",
+    "prediction": "Nightspore",
+    "ground_truth": "Krag and Nightspore.",
+    "reasoning": "llm_generation_phrase",
+    "confidence": 1.0,
+    "cross_encoder_score": 0.0,
+    "graph_confidence": 0.0,
+    "retrieved_chunk_ids": [],
+    "source_chunk_id": 68,
+    "metrics": {
+      "em": 0.0,
+      "f1": 0.5,
+      "bleu": 0.0,
+      "rouge_l": 0.5
+    }
+  },
+  {
+    "book_id": "014de1a8802c05ff64efa047e9290fb7fccea2b4",
+    "question": "How many people does Maskull usually see in the lands he travels?",
+    "question_type": "other",
+    "prediction": "NOT FOUND",
+    "ground_truth": "Not more than 1 or 2.",
+    "reasoning": "symbolic_miss",
+    "confidence": 0.0,
+    "cross_encoder_score": 0.0,
+    "graph_confidence": 0.0,
+    "retrieved_chunk_ids": [],
+    "source_chunk_id": null,
+    "metrics": {
+      "em": 0.0,
+      "f1": 0.25,
+      "bleu": 0.0,
+      "rouge_l": 0.25
+    }
+  },
+  {
+    "book_id": "014de1a8802c05ff64efa047e9290fb7fccea2b4",
+    "question": "What happens to the people Maskull meets in his travels to various lands?",
+    "question_type": "other",
+    "prediction": "NOT FOUND",
+    "ground_truth": "They usually die by his hand or anothers.",
+    "reasoning": "symbolic_miss",
+    "confidence": 0.0,
+    "cross_encoder_score": 0.0,
+    "graph_confidence": 0.0,
+    "retrieved_chunk_ids": [],
+    "source_chunk_id": null,
+    "metrics": {
+      "em": 0.0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "rouge_l": 0.0
+    }
+  },
+  {
+    "book_id": "014de1a8802c05ff64efa047e9290fb7fccea2b4",
+    "question": "Whom is known on Earth as Pain?",
+    "question_type": "other",
+    "prediction": "Nightspore",
+    "ground_truth": "Krag.",
+    "reasoning": "llm_generation_phrase",
+    "confidence": 1.0,
+    "cross_encoder_score": 0.0,
+    "graph_confidence": 0.0,
+    "retrieved_chunk_ids": [],
+    "source_chunk_id": 710,
+    "metrics": {
+      "em": 0.0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "rouge_l": 0.0
+    }
+  },
+  {
+    "book_id": "014de1a8802c05ff64efa047e9290fb7fccea2b4",
+    "question": "Maskull learns that he is also what character? ",
+    "question_type": "other",
+    "prediction": "Spadevil",
+    "ground_truth": "Nightspore.",
+    "reasoning": "llm_generation_phrase",
+    "confidence": 1.0,
+    "cross_encoder_score": 0.0,
+    "graph_confidence": 0.0,
+    "retrieved_chunk_ids": [],
+    "source_chunk_id": 310,
+    "metrics": {
+      "em": 0.0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "rouge_l": 0.0
+    }
+  },
+  {
+    "book_id": "014de1a8802c05ff64efa047e9290fb7fccea2b4",
+    "question": "What country does Maskull, Krag, and Nightspore set off from?",
+    "question_type": "other",
+    "prediction": "No",
+    "ground_truth": "Scotland",
+    "reasoning": "llm_generation_phrase",
+    "confidence": 1.0,
+    "cross_encoder_score": 0.0,
+    "graph_confidence": 0.0,
+    "retrieved_chunk_ids": [],
+    "source_chunk_id": 58,
+    "metrics": {
+      "em": 0.0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "rouge_l": 0.0
+    }
+  },
+  {
+    "book_id": "014de1a8802c05ff64efa047e9290fb7fccea2b4",
+    "question": "On average, how many people does Maskull normally meet when traveling?",
+    "question_type": "other",
+    "prediction": "No",
+    "ground_truth": "One or two",
+    "reasoning": "llm_generation_phrase",
+    "confidence": 1.0,
+    "cross_encoder_score": 0.0,
+    "graph_confidence": 0.0,
+    "retrieved_chunk_ids": [],
+    "source_chunk_id": 82,
+    "metrics": {
+      "em": 0.0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "rouge_l": 0.0
+    }
+  },
+  {
+    "book_id": "014de1a8802c05ff64efa047e9290fb7fccea2b4",
+    "question": "Where was Maskull planning on traveling to in the beginning of the story?",
+    "question_type": "where",
+    "prediction": "Sant",
+    "ground_truth": "Tormance",
+    "reasoning": "llm_generation_phrase",
+    "confidence": 1.0,
+    "cross_encoder_score": 0.0,
+    "graph_confidence": 0.0,
+    "retrieved_chunk_ids": [],
+    "source_chunk_id": 162,
+    "metrics": {
+      "em": 0.0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "rouge_l": 0.0
+    }
+  },
+  {
+    "book_id": "014de1a8802c05ff64efa047e9290fb7fccea2b4",
+    "question": "What normally happens when Maskull meets new people in the lands he travels to?",
+    "question_type": "other",
+    "prediction": "NO",
+    "ground_truth": "Normally they die",
+    "reasoning": "llm_generation_phrase",
+    "confidence": 1.0,
+    "cross_encoder_score": 0.0,
+    "graph_confidence": 0.0,
+    "retrieved_chunk_ids": [],
+    "source_chunk_id": 137,
+    "metrics": {
+      "em": 0.0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "rouge_l": 0.0
+    }
+  },
+  {
+    "book_id": "014de1a8802c05ff64efa047e9290fb7fccea2b4",
+    "question": "Who has a revelation about the origin of the universe?",
+    "question_type": "other",
+    "prediction": "NOT FOUND",
+    "ground_truth": "Krag",
+    "reasoning": "symbolic_miss",
+    "confidence": 0.0,
+    "cross_encoder_score": 0.0,
+    "graph_confidence": 0.0,
+    "retrieved_chunk_ids": [],
+    "source_chunk_id": null,
+    "metrics": {
+      "em": 0.0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "rouge_l": 0.0
+    }
+  },
+  {
+    "book_id": "014de1a8802c05ff64efa047e9290fb7fccea2b4",
+    "question": "Who is Nightspore?",
+    "question_type": "who",
+    "prediction": "Yes",
+    "ground_truth": "Maskull",
+    "reasoning": "who_relation_scored",
+    "confidence": 0.0,
+    "cross_encoder_score": 0.0,
+    "graph_confidence": 0.0,
+    "retrieved_chunk_ids": [],
+    "source_chunk_id": 710,
+    "metrics": {
+      "em": 0.0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "rouge_l": 0.0
+    }
+  },
+  {
+    "book_id": "014de1a8802c05ff64efa047e9290fb7fccea2b4",
+    "question": "What is Krag known as on Earth?",
+    "question_type": "what",
+    "prediction": "a voice of Crystalman",
+    "ground_truth": "Pain",
+    "reasoning": "llm_generation_phrase",
+    "confidence": 1.0,
+    "cross_encoder_score": 0.0,
+    "graph_confidence": 0.0,
+    "retrieved_chunk_ids": [],
+    "source_chunk_id": 710,
+    "metrics": {
+      "em": 0.0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "rouge_l": 0.0
+    }
+  },
+  {
+    "book_id": "014de1a8802c05ff64efa047e9290fb7fccea2b4",
+    "question": "Why does Maskull accept to go to Tormance with Krag and Nightspore?",
+    "question_type": "why",
+    "prediction": "NOT FOUND",
+    "ground_truth": "He was longing for adventures.",
+    "reasoning": "symbolic_miss",
+    "confidence": 0.0,
+    "cross_encoder_score": 0.0,
+    "graph_confidence": 0.0,
+    "retrieved_chunk_ids": [],
+    "source_chunk_id": null,
+    "metrics": {
+      "em": 0.0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "rouge_l": 0.0
+    }
+  },
+  {
+    "book_id": "014de1a8802c05ff64efa047e9290fb7fccea2b4",
+    "question": "Where does Maskull wake up alone at?",
+    "question_type": "where",
+    "prediction": "No Answer",
+    "ground_truth": "Tormance",
+    "reasoning": "llm_generation_phrase",
+    "confidence": 1.0,
+    "cross_encoder_score": 0.0,
+    "graph_confidence": 0.0,
+    "retrieved_chunk_ids": [],
+    "source_chunk_id": 432,
+    "metrics": {
+      "em": 0.0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "rouge_l": 0.0
+    }
+  },
+  {
+    "book_id": "014de1a8802c05ff64efa047e9290fb7fccea2b4",
+    "question": "What type of ship did the three set off in?",
+    "question_type": "other",
+    "prediction": "No",
+    "ground_truth": "A crystal ship",
+    "reasoning": "llm_generation_phrase",
+    "confidence": 1.0,
+    "cross_encoder_score": 0.0,
+    "graph_confidence": 0.0,
+    "retrieved_chunk_ids": [],
+    "source_chunk_id": 65,
+    "metrics": {
+      "em": 0.0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "rouge_l": 0.0
+    }
+  }
+]

@@ -1,0 +1,95 @@
+{
+  "overall": {
+    "em": 0.06896551724137931,
+    "f1": 0.09482758620689655,
+    "bleu": 0.0,
+    "rouge_l": 0.09482758620689655
+  },
+  "per_book": {
+    "014de1a8802c05ff64efa047e9290fb7fccea2b4": {
+      "em": 0.06896551724137931,
+      "f1": 0.09482758620689655,
+      "bleu": 0.0,
+      "rouge_l": 0.09482758620689655,
+      "num_questions": 29,
+      "num_correct": 2
+    }
+  },
+  "per_question_type": {
+    "who": {
+      "em": 0.14285714285714285,
+      "f1": 0.21428571428571427,
+      "bleu": 0.0,
+      "rouge_l": 0.21428571428571427,
+      "num_questions": 7,
+      "num_correct": 1
+    },
+    "where": {
+      "em": 0.2,
+      "f1": 0.2,
+      "bleu": 0.0,
+      "rouge_l": 0.2,
+      "num_questions": 5,
+      "num_correct": 1
+    },
+    "other": {
+      "em": 0.0,
+      "f1": 0.017857142857142856,
+      "bleu": 0.0,
+      "rouge_l": 0.017857142857142856,
+      "num_questions": 14,
+      "num_correct": 0
+    },
+    "why": {
+      "em": 0.0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "rouge_l": 0.0,
+      "num_questions": 2,
+      "num_correct": 0
+    },
+    "what": {
+      "em": 0.0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "rouge_l": 0.0,
+      "num_questions": 1,
+      "num_correct": 0
+    }
+  },
+  "per_reasoning": {
+    "llm_generation_phrase": {
+      "em": 0.1,
+      "f1": 0.125,
+      "bleu": 0.0,
+      "rouge_l": 0.125,
+      "num_questions": 20,
+      "num_correct": 2
+    },
+    "who_relation_scored": {
+      "em": 0.0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "rouge_l": 0.0,
+      "num_questions": 3,
+      "num_correct": 0
+    },
+    "location_scored": {
+      "em": 0.0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "rouge_l": 0.0,
+      "num_questions": 1,
+      "num_correct": 0
+    },
+    "symbolic_miss": {
+      "em": 0.0,
+      "f1": 0.05,
+      "bleu": 0.0,
+      "rouge_l": 0.05,
+      "num_questions": 5,
+      "num_correct": 0
+    }
+  },
+  "num_total_questions": 29
+}
