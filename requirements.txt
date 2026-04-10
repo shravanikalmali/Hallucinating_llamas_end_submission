@@ -1,0 +1,30 @@
+# INLP Project - Hallucinating Llamas
+# Requirements for Phase 0 and Phase 1
+
+# Core dependencies
+spacy>=3.7.0
+fastcoref>=2.1.6
+sentence-transformers>=2.2.0
+faiss-cpu>=1.7.4
+nltk>=3.8.0
+tqdm>=4.66.0
+
+# Phase 1 additional dependencies
+networkx>=3.0
+textblob>=0.17.0
+
+# Data processing
+beautifulsoup4>=4.12.0
+requests>=2.31.0
+numpy>=1.24.0
+python-dotenv>=1.0.0
+
+# Optional: for better NER
+# en-core-web-trf  # transformer-based spaCy model (slower but more accurate)
+
+# Installation instructions:
+# 1. Create virtual environment: python3 -m venv venv
+# 2. Activate: source venv/bin/activate
+# 3. Install: pip install -r requirements.txt
+# 4. Download spaCy model: python3 -m spacy download en_core_web_sm
+# 5. Download textblob corpora: python -m textblob.download_corpora

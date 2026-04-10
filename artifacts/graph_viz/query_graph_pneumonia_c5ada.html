@@ -1,0 +1,164 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 800px;
+                 background-color: #ffffff;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"color": "#97c2fc", "id": "Martha", "label": "Martha", "shape": "dot", "title": "segments: [22]\u003cbr\u003efirst_seen: 22\u003cbr\u003elast_seen: 22\u003cbr\u003elabels: [\"PERSON\"]\u003cbr\u003esegment_history: [22]\u003cbr\u003eall_segments: [17, 19, 20, 21, 22, 23, 24, 25]"}, {"color": "#97c2fc", "id": "Margaret", "label": "Margaret", "shape": "dot", "title": "segments: [6]\u003cbr\u003efirst_seen: 6\u003cbr\u003elast_seen: 6\u003cbr\u003elabels: [\"PERSON\"]\u003cbr\u003esegment_history: [6]\u003cbr\u003eall_segments: [3, 4, 6, 15, 34]"}, {"color": "#97c2fc", "id": "Nellie", "label": "Nellie", "shape": "dot", "title": "segments: [6, 8, 9, 19, 23, 26]\u003cbr\u003efirst_seen: 6\u003cbr\u003elast_seen: 26\u003cbr\u003elabels: [\"ORG\", \"PERSON\", \"GPE\"]\u003cbr\u003esegment_history: [6, 8, 9, 19, 23, 26]\u003cbr\u003etemporal_span: 20\u003cbr\u003eall_segments: [0, 1, 2, 3, 4, 5, 6, 8, 9, 14, 15, 17, 19, 21, 22, 23, 25, 26, 27, 28, 29, 30, 31, 32, 34, 35, 37, 38, 39]"}, {"color": "#97c2fc", "id": "Misrule", "label": "Misrule", "shape": "dot", "title": "segments: [9]\u003cbr\u003efirst_seen: 9\u003cbr\u003elast_seen: 9\u003cbr\u003elabels: [\"PERSON\"]\u003cbr\u003esegment_history: [9]\u003cbr\u003eall_segments: [0, 1, 8, 9, 11, 12, 13, 14, 15, 28, 29, 34, 38, 39]"}, {"color": "#97c2fc", "id": "Helen", "label": "Helen", "shape": "dot", "title": "segments: [8]\u003cbr\u003efirst_seen: 8\u003cbr\u003elast_seen: 8\u003cbr\u003elabels: [\"PERSON\"]\u003cbr\u003esegment_history: [8]\u003cbr\u003eall_segments: [4, 8, 9, 25]"}, {"color": "#97c2fc", "id": "Burton", "label": "Burton", "shape": "dot", "title": "segments: [8]\u003cbr\u003efirst_seen: 8\u003cbr\u003elast_seen: 8\u003cbr\u003elabels: [\"PERSON\"]\u003cbr\u003esegment_history: [8]\u003cbr\u003eall_segments: [8, 9, 19, 22]"}, {"color": "#97c2fc", "id": "Baby", "label": "Baby", "shape": "dot", "title": "segments: [8, 9, 19]\u003cbr\u003efirst_seen: 8\u003cbr\u003elast_seen: 19\u003cbr\u003elabels: [\"PRODUCT\", \"ORG\", \"PERSON\"]\u003cbr\u003esegment_history: [8, 9, 19]\u003cbr\u003etemporal_span: 11\u003cbr\u003eall_segments: [2, 4, 5, 6, 8, 9, 11, 12, 17, 19, 25, 27, 28, 30, 32, 35, 39]"}, {"color": "#97c2fc", "id": "Pip", "label": "Pip", "shape": "dot", "title": "segments: [6, 8, 22, 23]\u003cbr\u003efirst_seen: 6\u003cbr\u003elast_seen: 23\u003cbr\u003elabels: [\"ORG\", \"PERSON\"]\u003cbr\u003esegment_history: [6, 8, 22, 23]\u003cbr\u003etemporal_span: 17\u003cbr\u003eall_segments: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 18, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 38]"}, {"color": "#97c2fc", "id": "Bunty", "label": "Bunty", "shape": "dot", "title": "segments: [6, 8, 19, 23]\u003cbr\u003efirst_seen: 6\u003cbr\u003elast_seen: 23\u003cbr\u003elabels: [\"PRODUCT\", \"FAC\", \"ORG\"]\u003cbr\u003esegment_history: [6, 8, 19, 23]\u003cbr\u003etemporal_span: 17\u003cbr\u003eall_segments: [1, 2, 3, 5, 6, 8, 9, 10, 15, 16, 17, 18, 19, 20, 21, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 38]"}, {"color": "#97c2fc", "id": "Esther", "label": "Esther", "shape": "dot", "title": "segments: [6, 8, 9, 19, 22, 23, 26]\u003cbr\u003efirst_seen: 6\u003cbr\u003elast_seen: 26\u003cbr\u003elabels: [\"PERSON\"]\u003cbr\u003esegment_history: [6, 8, 9, 19, 22, 23, 26]\u003cbr\u003etemporal_span: 20\u003cbr\u003eall_segments: [1, 2, 3, 5, 6, 8, 9, 10, 12, 14, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 32, 38, 39]"}, {"color": "#97c2fc", "id": "Woolcot", "label": "Woolcot", "shape": "dot", "title": "segments: [26]\u003cbr\u003efirst_seen: 26\u003cbr\u003elast_seen: 26\u003cbr\u003elabels: [\"ORG\", \"PERSON\"]\u003cbr\u003esegment_history: [26]\u003cbr\u003eall_segments: [0, 1, 2, 6, 8, 11, 12, 14, 17, 26, 27, 30, 34]"}, {"color": "#97c2fc", "id": "Pat", "label": "Pat", "shape": "dot", "title": "segments: [6]\u003cbr\u003efirst_seen: 6\u003cbr\u003elast_seen: 6\u003cbr\u003elabels: [\"PERSON\"]\u003cbr\u003esegment_history: [6]\u003cbr\u003eall_segments: [4, 6, 7, 10, 18, 27]"}, {"color": "#97c2fc", "id": "Sydney", "label": "Sydney", "shape": "dot", "title": "segments: [22]\u003cbr\u003efirst_seen: 22\u003cbr\u003elast_seen: 22\u003cbr\u003elabels: [\"GPE\"]\u003cbr\u003esegment_history: [22]\u003cbr\u003eall_segments: [3, 8, 11, 21, 22, 27, 28, 32, 33]"}, {"color": "#97c2fc", "id": "Barracks", "label": "Barracks", "shape": "dot", "title": "segments: [6]\u003cbr\u003efirst_seen: 6\u003cbr\u003elast_seen: 6\u003cbr\u003elabels: [\"LOC\"]\u003cbr\u003esegment_history: [6]\u003cbr\u003eall_segments: [6, 7, 8, 17]"}, {"color": "#97c2fc", "id": "Courtney", "label": "Courtney", "shape": "dot", "title": "segments: [19]\u003cbr\u003efirst_seen: 19\u003cbr\u003elast_seen: 19\u003cbr\u003elabels: [\"PRODUCT\", \"ORG\", \"PERSON\"]\u003cbr\u003esegment_history: [19]\u003cbr\u003eall_segments: [12, 13, 14, 15, 19, 38]"}, {"color": "#97c2fc", "id": "Captain", "label": "Captain", "shape": "dot", "title": "segments: [6, 26]\u003cbr\u003efirst_seen: 6\u003cbr\u003elast_seen: 26\u003cbr\u003elabels: [\"ORG\"]\u003cbr\u003esegment_history: [6, 26]\u003cbr\u003etemporal_span: 20\u003cbr\u003eall_segments: [2, 3, 4, 6, 8, 18, 24, 25, 26, 27]"}, {"color": "#97c2fc", "id": "Judy", "label": "Judy", "shape": "dot", "title": "segments: [6, 8, 9, 19, 22, 23, 26]\u003cbr\u003efirst_seen: 6\u003cbr\u003elast_seen: 26\u003cbr\u003elabels: [\"ORG\", \"PERSON\"]\u003cbr\u003esegment_history: [6, 8, 9, 19, 22, 23, 26]\u003cbr\u003etemporal_span: 20\u003cbr\u003eall_segments: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 15, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39]"}]);
+                  edges = new vis.DataSet([{"from": "Martha", "title": "weight: 2\u003cbr\u003esegments: [22]\u003cbr\u003echunk_ids: [191, 192]\u003cbr\u003erelation: cooccurrence\u003cbr\u003erelation_confidence: 0.85\u003cbr\u003eweight_bonus: 2.0\u003cbr\u003erelation_counts: {\"causal\": 2}", "to": "Esther"}, {"from": "Martha", "title": "weight: 2\u003cbr\u003esegments: [22]\u003cbr\u003echunk_ids: [191, 192]\u003cbr\u003erelation: cooccurrence\u003cbr\u003erelation_confidence: 0.85\u003cbr\u003eweight_bonus: 2.0\u003cbr\u003erelation_counts: {\"causal\": 2}", "to": "Judy"}, {"from": "Martha", "title": "weight: 2\u003cbr\u003esegments: [22]\u003cbr\u003echunk_ids: [191, 192]\u003cbr\u003erelation: cooccurrence\u003cbr\u003erelation_confidence: 0.85\u003cbr\u003eweight_bonus: 2.0\u003cbr\u003erelation_counts: {\"causal\": 2}", "to": "Pip"}, {"from": "Martha", "title": "weight: 2\u003cbr\u003esegments: [22]\u003cbr\u003echunk_ids: [191, 192]\u003cbr\u003erelation: cooccurrence\u003cbr\u003erelation_confidence: 0.85\u003cbr\u003eweight_bonus: 2.0\u003cbr\u003erelation_counts: {\"causal\": 2}", "to": "Sydney"}, {"from": "Margaret", "title": "weight: 2\u003cbr\u003esegments: [6]\u003cbr\u003echunk_ids: [55, 56]\u003cbr\u003erelation: cooccurrence\u003cbr\u003erelation_confidence: 0.85\u003cbr\u003eweight_bonus: 2.0\u003cbr\u003erelation_counts: {\"causal\": 2}", "to": "Barracks"}, {"from": "Margaret", "title": "weight: 2\u003cbr\u003esegments: [6]\u003cbr\u003echunk_ids: [55, 56]\u003cbr\u003erelation: cooccurrence\u003cbr\u003erelation_confidence: 0.85\u003cbr\u003eweight_bonus: 2.0\u003cbr\u003erelation_counts: {\"causal\": 2}", "to": "Bunty"}, {"from": "Margaret", "title": "weight: 2\u003cbr\u003esegments: [6]\u003cbr\u003echunk_ids: [55, 56]\u003cbr\u003erelation: cooccurrence\u003cbr\u003erelation_confidence: 0.85\u003cbr\u003eweight_bonus: 2.0\u003cbr\u003erelation_counts: {\"causal\": 2}", "to": "Captain"}, {"from": "Margaret", "title": "weight: 2\u003cbr\u003esegments: [6]\u003cbr\u003echunk_ids: [55, 56]\u003cbr\u003erelation: cooccurrence\u003cbr\u003erelation_confidence: 0.85\u003cbr\u003eweight_bonus: 2.0\u003cbr\u003erelation_counts: {\"causal\": 2}", "to": "Esther"}, {"from": "Margaret", "title": "weight: 2\u003cbr\u003esegments: [6]\u003cbr\u003echunk_ids: [55, 56]\u003cbr\u003erelation: cooccurrence\u003cbr\u003erelation_confidence: 0.85\u003cbr\u003eweight_bonus: 2.0\u003cbr\u003erelation_counts: {\"causal\": 2}", "to": "Judy"}, {"from": "Margaret", "title": "weight: 2\u003cbr\u003esegments: [6]\u003cbr\u003echunk_ids: [55, 56]\u003cbr\u003erelation: cooccurrence\u003cbr\u003erelation_confidence: 0.85\u003cbr\u003eweight_bonus: 2.0\u003cbr\u003erelation_counts: {\"causal\": 2}", "to": "Nellie"}, {"from": "Margaret", "title": "weight: 2\u003cbr\u003esegments: [6]\u003cbr\u003echunk_ids: [55, 56]\u003cbr\u003erelation: cooccurrence\u003cbr\u003erelation_confidence: 0.85\u003cbr\u003eweight_bonus: 2.0\u003cbr\u003erelation_counts: {\"causal\": 2}", "to": "Pat"}, {"from": "Margaret", "title": "weight: 2\u003cbr\u003esegments: [6]\u003cbr\u003echunk_ids: [55, 56]\u003cbr\u003erelation: cooccurrence\u003cbr\u003erelation_confidence: 0.85\u003cbr\u003eweight_bonus: 2.0\u003cbr\u003erelation_counts: {\"causal\": 2}", "to": "Pip"}, {"from": "Nellie", "title": "weight: 4\u003cbr\u003esegments: [9, 19, 8]\u003cbr\u003echunk_ids: [79, 164, 163, 77]\u003cbr\u003erelation: cooccurrence\u003cbr\u003erelation_confidence: 0.9\u003cbr\u003eweight_bonus: 2.0\u003cbr\u003erelation_counts: {\"causal\": 4}", "to": "Baby"}, {"from": "Nellie", "title": "weight: 9\u003cbr\u003esegments: [9, 19, 26, 23, 6, 8]\u003cbr\u003echunk_ids: [79, 164, 163, 230, 229, 198, 55, 56, 77]\u003cbr\u003erelation: cooccurrence\u003cbr\u003erelation_confidence: 0.9\u003cbr\u003eweight_bonus: 2.0\u003cbr\u003erelation_counts: {\"causal\": 8, \"spatial\": 1}", "to": "Esther"}, {"from": "Nellie", "title": "weight: 9\u003cbr\u003esegments: [9, 19, 26, 23, 6, 8]\u003cbr\u003echunk_ids: [79, 164, 163, 230, 229, 198, 55, 56, 77]\u003cbr\u003erelation: cooccurrence\u003cbr\u003erelation_confidence: 0.9\u003cbr\u003eweight_bonus: 2.0\u003cbr\u003erelation_counts: {\"causal\": 8, \"spatial\": 1}", "to": "Judy"}, {"from": "Nellie", "title": "weight: 1\u003cbr\u003esegments: [9]\u003cbr\u003echunk_ids: [79]\u003cbr\u003erelation: cooccurrence\u003cbr\u003erelation_confidence: 0.9\u003cbr\u003eweight_bonus: 2.0\u003cbr\u003erelation_counts: {\"causal\": 1}", "to": "Misrule"}, {"from": "Nellie", "title": "weight: 6\u003cbr\u003esegments: [19, 23, 6, 8]\u003cbr\u003echunk_ids: [164, 163, 198, 55, 56, 77]\u003cbr\u003erelation: cooccurrence\u003cbr\u003erelation_confidence: 0.9\u003cbr\u003eweight_bonus: 2.0\u003cbr\u003erelation_counts: {\"causal\": 5, \"spatial\": 1}", "to": "Bunty"}, {"from": "Nellie", "title": "weight: 2\u003cbr\u003esegments: [19]\u003cbr\u003echunk_ids: [164, 163]\u003cbr\u003erelation: cooccurrence\u003cbr\u003erelation_confidence: 0.9\u003cbr\u003eweight_bonus: 2.0\u003cbr\u003erelation_counts: {\"causal\": 2}", "to": "Courtney"}, {"from": "Nellie", "title": "weight: 4\u003cbr\u003esegments: [26, 6]\u003cbr\u003echunk_ids: [230, 229, 55, 56]\u003cbr\u003erelation: cooccurrence\u003cbr\u003erelation_confidence: 0.9\u003cbr\u003eweight_bonus: 2.0\u003cbr\u003erelation_counts: {\"causal\": 4}", "to": "Captain"}, {"from": "Nellie", "title": "weight: 2\u003cbr\u003esegments: [26]\u003cbr\u003echunk_ids: [230, 229]\u003cbr\u003erelation: cooccurrence\u003cbr\u003erelation_confidence: 0.9\u003cbr\u003eweight_bonus: 2.0\u003cbr\u003erelation_counts: {\"causal\": 2}", "to": "Woolcot"}, {"from": "Nellie", "title": "weight: 4\u003cbr\u003esegments: [23, 6, 8]\u003cbr\u003echunk_ids: [198, 55, 56, 77]\u003cbr\u003erelation: cooccurrence\u003cbr\u003erelation_confidence: 0.85\u003cbr\u003eweight_bonus: 2.0\u003cbr\u003erelation_counts: {\"spatial\": 1, \"causal\": 3}", "to": "Pip"}, {"from": "Nellie", "title": "weight: 2\u003cbr\u003esegments: [6]\u003cbr\u003echunk_ids: [55, 56]\u003cbr\u003erelation: cooccurrence\u003cbr\u003erelation_confidence: 0.85\u003cbr\u003eweight_bonus: 2.0\u003cbr\u003erelation_counts: {\"causal\": 2}", "to": "Barracks"}, {"from": "Nellie", "title": "weight: 2\u003cbr\u003esegments: [6]\u003cbr\u003echunk_ids: [55, 56]\u003cbr\u003erelation: cooccurrence\u003cbr\u003erelation_confidence: 0.85\u003cbr\u003eweight_bonus: 2.0\u003cbr\u003erelation_counts: {\"causal\": 2}", "to": "Pat"}, {"from": "Nellie", "title": "weight: 1\u003cbr\u003esegments: [8]\u003cbr\u003echunk_ids: [77]\u003cbr\u003erelation: cooccurrence\u003cbr\u003erelation_confidence: 0.8\u003cbr\u003eweight_bonus: 2.0\u003cbr\u003erelation_counts: {\"causal\": 1}", "to": "Burton"}, {"from": "Nellie", "title": "weight: 1\u003cbr\u003esegments: [8]\u003cbr\u003echunk_ids: [77]\u003cbr\u003erelation: cooccurrence\u003cbr\u003erelation_confidence: 0.8\u003cbr\u003eweight_bonus: 2.0\u003cbr\u003erelation_counts: {\"causal\": 1}", "to": "Helen"}, {"from": "Misrule", "title": "weight: 1\u003cbr\u003esegments: [9]\u003cbr\u003echunk_ids: [79]\u003cbr\u003erelation: cooccurrence\u003cbr\u003erelation_confidence: 0.9\u003cbr\u003eweight_bonus: 2.0\u003cbr\u003erelation_counts: {\"causal\": 1}", "to": "Baby"}, {"from": "Misrule", "title": "weight: 1\u003cbr\u003esegments: [9]\u003cbr\u003echunk_ids: [79]\u003cbr\u003erelation: cooccurrence\u003cbr\u003erelation_confidence: 0.9\u003cbr\u003eweight_bonus: 2.0\u003cbr\u003erelation_counts: {\"causal\": 1}", "to": "Esther"}, {"from": "Misrule", "title": "weight: 1\u003cbr\u003esegments: [9]\u003cbr\u003echunk_ids: [79]\u003cbr\u003erelation: cooccurrence\u003cbr\u003erelation_confidence: 0.9\u003cbr\u003eweight_bonus: 2.0\u003cbr\u003erelation_counts: {\"causal\": 1}", "to": "Judy"}, {"from": "Helen", "title": "weight: 1\u003cbr\u003esegments: [8]\u003cbr\u003echunk_ids: [77]\u003cbr\u003erelation: cooccurrence\u003cbr\u003erelation_confidence: 0.8\u003cbr\u003eweight_bonus: 2.0\u003cbr\u003erelation_counts: {\"causal\": 1}", "to": "Baby"}, {"from": "Helen", "title": "weight: 1\u003cbr\u003esegments: [8]\u003cbr\u003echunk_ids: [77]\u003cbr\u003erelation: cooccurrence\u003cbr\u003erelation_confidence: 0.8\u003cbr\u003eweight_bonus: 2.0\u003cbr\u003erelation_counts: {\"causal\": 1}", "to": "Bunty"}, {"from": "Helen", "title": "weight: 1\u003cbr\u003esegments: [8]\u003cbr\u003echunk_ids: [77]\u003cbr\u003erelation: cooccurrence\u003cbr\u003erelation_confidence: 0.8\u003cbr\u003eweight_bonus: 2.0\u003cbr\u003erelation_counts: {\"causal\": 1}", "to": "Burton"}, {"from": "Helen", "title": "weight: 1\u003cbr\u003esegments: [8]\u003cbr\u003echunk_ids: [77]\u003cbr\u003erelation: cooccurrence\u003cbr\u003erelation_confidence: 0.8\u003cbr\u003eweight_bonus: 2.0\u003cbr\u003erelation_counts: {\"causal\": 1}", "to": "Esther"}, {"from": "Helen", "title": "weight: 1\u003cbr\u003esegments: [8]\u003cbr\u003echunk_ids: [77]\u003cbr\u003erelation: cooccurrence\u003cbr\u003erelation_confidence: 0.8\u003cbr\u003eweight_bonus: 2.0\u003cbr\u003erelation_counts: {\"causal\": 1}", "to": "Judy"}, {"from": "Helen", "title": "weight: 1\u003cbr\u003esegments: [8]\u003cbr\u003echunk_ids: [77]\u003cbr\u003erelation: cooccurrence\u003cbr\u003erelation_confidence: 0.8\u003cbr\u003eweight_bonus: 2.0\u003cbr\u003erelation_counts: {\"causal\": 1}", "to": "Pip"}, {"from": "Burton", "title": "weight: 1\u003cbr\u003esegments: [8]\u003cbr\u003echunk_ids: [77]\u003cbr\u003erelation: cooccurrence\u003cbr\u003erelation_confidence: 0.8\u003cbr\u003eweight_bonus: 2.0\u003cbr\u003erelation_counts: {\"causal\": 1}", "to": "Baby"}, {"from": "Burton", "title": "weight: 1\u003cbr\u003esegments: [8]\u003cbr\u003echunk_ids: [77]\u003cbr\u003erelation: cooccurrence\u003cbr\u003erelation_confidence: 0.8\u003cbr\u003eweight_bonus: 2.0\u003cbr\u003erelation_counts: {\"causal\": 1}", "to": "Bunty"}, {"from": "Burton", "title": "weight: 1\u003cbr\u003esegments: [8]\u003cbr\u003echunk_ids: [77]\u003cbr\u003erelation: cooccurrence\u003cbr\u003erelation_confidence: 0.8\u003cbr\u003eweight_bonus: 2.0\u003cbr\u003erelation_counts: {\"causal\": 1}", "to": "Esther"}, {"from": "Burton", "title": "weight: 1\u003cbr\u003esegments: [8]\u003cbr\u003echunk_ids: [77]\u003cbr\u003erelation: cooccurrence\u003cbr\u003erelation_confidence: 0.8\u003cbr\u003eweight_bonus: 2.0\u003cbr\u003erelation_counts: {\"causal\": 1}", "to": "Judy"}, {"from": "Burton", "title": "weight: 1\u003cbr\u003esegments: [8]\u003cbr\u003echunk_ids: [77]\u003cbr\u003erelation: cooccurrence\u003cbr\u003erelation_confidence: 0.8\u003cbr\u003eweight_bonus: 2.0\u003cbr\u003erelation_counts: {\"causal\": 1}", "to": "Pip"}, {"from": "Baby", "title": "weight: 4\u003cbr\u003esegments: [9, 19, 8]\u003cbr\u003echunk_ids: [79, 164, 163, 77]\u003cbr\u003erelation: cooccurrence\u003cbr\u003erelation_confidence: 0.9\u003cbr\u003eweight_bonus: 2.0\u003cbr\u003erelation_counts: {\"causal\": 4}", "to": "Esther"}, {"from": "Baby", "title": "weight: 4\u003cbr\u003esegments: [9, 19, 8]\u003cbr\u003echunk_ids: [79, 164, 163, 77]\u003cbr\u003erelation: cooccurrence\u003cbr\u003erelation_confidence: 0.9\u003cbr\u003eweight_bonus: 2.0\u003cbr\u003erelation_counts: {\"causal\": 4}", "to": "Judy"}, {"from": "Baby", "title": "weight: 3\u003cbr\u003esegments: [19, 8]\u003cbr\u003echunk_ids: [164, 163, 77]\u003cbr\u003erelation: cooccurrence\u003cbr\u003erelation_confidence: 0.9\u003cbr\u003eweight_bonus: 2.0\u003cbr\u003erelation_counts: {\"causal\": 3}", "to": "Bunty"}, {"from": "Baby", "title": "weight: 2\u003cbr\u003esegments: [19]\u003cbr\u003echunk_ids: [164, 163]\u003cbr\u003erelation: cooccurrence\u003cbr\u003erelation_confidence: 0.9\u003cbr\u003eweight_bonus: 2.0\u003cbr\u003erelation_counts: {\"causal\": 2}", "to": "Courtney"}, {"from": "Baby", "title": "weight: 1\u003cbr\u003esegments: [8]\u003cbr\u003echunk_ids: [77]\u003cbr\u003erelation: cooccurrence\u003cbr\u003erelation_confidence: 0.8\u003cbr\u003eweight_bonus: 2.0\u003cbr\u003erelation_counts: {\"causal\": 1}", "to": "Pip"}, {"from": "Pip", "title": "weight: 6\u003cbr\u003esegments: [22, 23, 6, 8]\u003cbr\u003echunk_ids: [191, 192, 198, 55, 56, 77]\u003cbr\u003erelation: cooccurrence\u003cbr\u003erelation_confidence: 0.85\u003cbr\u003eweight_bonus: 2.0\u003cbr\u003erelation_counts: {\"causal\": 5, \"spatial\": 1}", "to": "Esther"}, {"from": "Pip", "title": "weight: 6\u003cbr\u003esegments: [22, 23, 6, 8]\u003cbr\u003echunk_ids: [191, 192, 198, 55, 56, 77]\u003cbr\u003erelation: cooccurrence\u003cbr\u003erelation_confidence: 0.85\u003cbr\u003eweight_bonus: 2.0\u003cbr\u003erelation_counts: {\"causal\": 5, \"spatial\": 1}", "to": "Judy"}, {"from": "Pip", "title": "weight: 2\u003cbr\u003esegments: [22]\u003cbr\u003echunk_ids: [191, 192]\u003cbr\u003erelation: cooccurrence\u003cbr\u003erelation_confidence: 0.85\u003cbr\u003eweight_bonus: 2.0\u003cbr\u003erelation_counts: {\"causal\": 2}", "to": "Sydney"}, {"from": "Pip", "title": "weight: 4\u003cbr\u003esegments: [23, 6, 8]\u003cbr\u003echunk_ids: [198, 55, 56, 77]\u003cbr\u003erelation: cooccurrence\u003cbr\u003erelation_confidence: 0.85\u003cbr\u003eweight_bonus: 2.0\u003cbr\u003erelation_counts: {\"spatial\": 1, \"causal\": 3}", "to": "Bunty"}, {"from": "Pip", "title": "weight: 2\u003cbr\u003esegments: [6]\u003cbr\u003echunk_ids: [55, 56]\u003cbr\u003erelation: cooccurrence\u003cbr\u003erelation_confidence: 0.85\u003cbr\u003eweight_bonus: 2.0\u003cbr\u003erelation_counts: {\"causal\": 2}", "to": "Barracks"}, {"from": "Pip", "title": "weight: 2\u003cbr\u003esegments: [6]\u003cbr\u003echunk_ids: [55, 56]\u003cbr\u003erelation: cooccurrence\u003cbr\u003erelation_confidence: 0.85\u003cbr\u003eweight_bonus: 2.0\u003cbr\u003erelation_counts: {\"causal\": 2}", "to": "Captain"}, {"from": "Pip", "title": "weight: 2\u003cbr\u003esegments: [6]\u003cbr\u003echunk_ids: [55, 56]\u003cbr\u003erelation: cooccurrence\u003cbr\u003erelation_confidence: 0.85\u003cbr\u003eweight_bonus: 2.0\u003cbr\u003erelation_counts: {\"causal\": 2}", "to": "Pat"}, {"from": "Bunty", "title": "weight: 2\u003cbr\u003esegments: [19]\u003cbr\u003echunk_ids: [164, 163]\u003cbr\u003erelation: cooccurrence\u003cbr\u003erelation_confidence: 0.9\u003cbr\u003eweight_bonus: 2.0\u003cbr\u003erelation_counts: {\"causal\": 2}", "to": "Courtney"}, {"from": "Bunty", "title": "weight: 6\u003cbr\u003esegments: [19, 23, 6, 8]\u003cbr\u003echunk_ids: [164, 163, 198, 55, 56, 77]\u003cbr\u003erelation: cooccurrence\u003cbr\u003erelation_confidence: 0.9\u003cbr\u003eweight_bonus: 2.0\u003cbr\u003erelation_counts: {\"causal\": 5, \"spatial\": 1}", "to": "Esther"}, {"from": "Bunty", "title": "weight: 6\u003cbr\u003esegments: [19, 23, 6, 8]\u003cbr\u003echunk_ids: [164, 163, 198, 55, 56, 77]\u003cbr\u003erelation: cooccurrence\u003cbr\u003erelation_confidence: 0.9\u003cbr\u003eweight_bonus: 2.0\u003cbr\u003erelation_counts: {\"causal\": 5, \"spatial\": 1}", "to": "Judy"}, {"from": "Bunty", "title": "weight: 2\u003cbr\u003esegments: [6]\u003cbr\u003echunk_ids: [55, 56]\u003cbr\u003erelation: cooccurrence\u003cbr\u003erelation_confidence: 0.85\u003cbr\u003eweight_bonus: 2.0\u003cbr\u003erelation_counts: {\"causal\": 2}", "to": "Barracks"}, {"from": "Bunty", "title": "weight: 2\u003cbr\u003esegments: [6]\u003cbr\u003echunk_ids: [55, 56]\u003cbr\u003erelation: cooccurrence\u003cbr\u003erelation_confidence: 0.85\u003cbr\u003eweight_bonus: 2.0\u003cbr\u003erelation_counts: {\"causal\": 2}", "to": "Captain"}, {"from": "Bunty", "title": "weight: 2\u003cbr\u003esegments: [6]\u003cbr\u003echunk_ids: [55, 56]\u003cbr\u003erelation: cooccurrence\u003cbr\u003erelation_confidence: 0.85\u003cbr\u003eweight_bonus: 2.0\u003cbr\u003erelation_counts: {\"causal\": 2}", "to": "Pat"}, {"from": "Esther", "title": "weight: 11\u003cbr\u003esegments: [22, 9, 19, 26, 23, 6, 8]\u003cbr\u003echunk_ids: [191, 192, 79, 164, 163, 230, 229, 198, 55, 56, 77]\u003cbr\u003erelation: cooccurrence\u003cbr\u003erelation_confidence: 0.9\u003cbr\u003eweight_bonus: 2.0\u003cbr\u003erelation_counts: {\"causal\": 10, \"spatial\": 1}", "to": "Judy"}, {"from": "Esther", "title": "weight: 2\u003cbr\u003esegments: [22]\u003cbr\u003echunk_ids: [191, 192]\u003cbr\u003erelation: cooccurrence\u003cbr\u003erelation_confidence: 0.85\u003cbr\u003eweight_bonus: 2.0\u003cbr\u003erelation_counts: {\"causal\": 2}", "to": "Sydney"}, {"from": "Esther", "title": "weight: 2\u003cbr\u003esegments: [19]\u003cbr\u003echunk_ids: [164, 163]\u003cbr\u003erelation: cooccurrence\u003cbr\u003erelation_confidence: 0.9\u003cbr\u003eweight_bonus: 2.0\u003cbr\u003erelation_counts: {\"causal\": 2}", "to": "Courtney"}, {"from": "Esther", "title": "weight: 4\u003cbr\u003esegments: [26, 6]\u003cbr\u003echunk_ids: [230, 229, 55, 56]\u003cbr\u003erelation: cooccurrence\u003cbr\u003erelation_confidence: 0.9\u003cbr\u003eweight_bonus: 2.0\u003cbr\u003erelation_counts: {\"causal\": 4}", "to": "Captain"}, {"from": "Esther", "title": "weight: 2\u003cbr\u003esegments: [26]\u003cbr\u003echunk_ids: [230, 229]\u003cbr\u003erelation: cooccurrence\u003cbr\u003erelation_confidence: 0.9\u003cbr\u003eweight_bonus: 2.0\u003cbr\u003erelation_counts: {\"causal\": 2}", "to": "Woolcot"}, {"from": "Esther", "title": "weight: 2\u003cbr\u003esegments: [6]\u003cbr\u003echunk_ids: [55, 56]\u003cbr\u003erelation: cooccurrence\u003cbr\u003erelation_confidence: 0.85\u003cbr\u003eweight_bonus: 2.0\u003cbr\u003erelation_counts: {\"causal\": 2}", "to": "Barracks"}, {"from": "Esther", "title": "weight: 2\u003cbr\u003esegments: [6]\u003cbr\u003echunk_ids: [55, 56]\u003cbr\u003erelation: cooccurrence\u003cbr\u003erelation_confidence: 0.85\u003cbr\u003eweight_bonus: 2.0\u003cbr\u003erelation_counts: {\"causal\": 2}", "to": "Pat"}, {"from": "Woolcot", "title": "weight: 2\u003cbr\u003esegments: [26]\u003cbr\u003echunk_ids: [230, 229]\u003cbr\u003erelation: cooccurrence\u003cbr\u003erelation_confidence: 0.9\u003cbr\u003eweight_bonus: 2.0\u003cbr\u003erelation_counts: {\"causal\": 2}", "to": "Captain"}, {"from": "Woolcot", "title": "weight: 2\u003cbr\u003esegments: [26]\u003cbr\u003echunk_ids: [230, 229]\u003cbr\u003erelation: cooccurrence\u003cbr\u003erelation_confidence: 0.9\u003cbr\u003eweight_bonus: 2.0\u003cbr\u003erelation_counts: {\"causal\": 2}", "to": "Judy"}, {"from": "Pat", "title": "weight: 2\u003cbr\u003esegments: [6]\u003cbr\u003echunk_ids: [55, 56]\u003cbr\u003erelation: cooccurrence\u003cbr\u003erelation_confidence: 0.85\u003cbr\u003eweight_bonus: 2.0\u003cbr\u003erelation_counts: {\"causal\": 2}", "to": "Barracks"}, {"from": "Pat", "title": "weight: 2\u003cbr\u003esegments: [6]\u003cbr\u003echunk_ids: [55, 56]\u003cbr\u003erelation: cooccurrence\u003cbr\u003erelation_confidence: 0.85\u003cbr\u003eweight_bonus: 2.0\u003cbr\u003erelation_counts: {\"causal\": 2}", "to": "Captain"}, {"from": "Pat", "title": "weight: 2\u003cbr\u003esegments: [6]\u003cbr\u003echunk_ids: [55, 56]\u003cbr\u003erelation: cooccurrence\u003cbr\u003erelation_confidence: 0.85\u003cbr\u003eweight_bonus: 2.0\u003cbr\u003erelation_counts: {\"causal\": 2}", "to": "Judy"}, {"from": "Sydney", "title": "weight: 2\u003cbr\u003esegments: [22]\u003cbr\u003echunk_ids: [191, 192]\u003cbr\u003erelation: cooccurrence\u003cbr\u003erelation_confidence: 0.85\u003cbr\u003eweight_bonus: 2.0\u003cbr\u003erelation_counts: {\"causal\": 2}", "to": "Judy"}, {"from": "Barracks", "title": "weight: 2\u003cbr\u003esegments: [6]\u003cbr\u003echunk_ids: [55, 56]\u003cbr\u003erelation: cooccurrence\u003cbr\u003erelation_confidence: 0.85\u003cbr\u003eweight_bonus: 2.0\u003cbr\u003erelation_counts: {\"causal\": 2}", "to": "Captain"}, {"from": "Barracks", "title": "weight: 2\u003cbr\u003esegments: [6]\u003cbr\u003echunk_ids: [55, 56]\u003cbr\u003erelation: cooccurrence\u003cbr\u003erelation_confidence: 0.85\u003cbr\u003eweight_bonus: 2.0\u003cbr\u003erelation_counts: {\"causal\": 2}", "to": "Judy"}, {"from": "Courtney", "title": "weight: 2\u003cbr\u003esegments: [19]\u003cbr\u003echunk_ids: [164, 163]\u003cbr\u003erelation: cooccurrence\u003cbr\u003erelation_confidence: 0.9\u003cbr\u003eweight_bonus: 2.0\u003cbr\u003erelation_counts: {\"causal\": 2}", "to": "Judy"}, {"from": "Captain", "title": "weight: 4\u003cbr\u003esegments: [26, 6]\u003cbr\u003echunk_ids: [230, 229, 55, 56]\u003cbr\u003erelation: cooccurrence\u003cbr\u003erelation_confidence: 0.9\u003cbr\u003eweight_bonus: 2.0\u003cbr\u003erelation_counts: {\"causal\": 4}", "to": "Judy"}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "forceAtlas2Based": {
+            "avoidOverlap": 0,
+            "centralGravity": 0.01,
+            "damping": 0.4,
+            "gravitationalConstant": -50,
+            "springConstant": 0.08,
+            "springLength": 100
+        },
+        "solver": "forceAtlas2Based",
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>

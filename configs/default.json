@@ -1,0 +1,9 @@
+{
+    "use_dense": true,
+    "use_bm25": true,
+    "use_mmr": true,
+    "use_neighbors": true,
+    "use_graph_expansion": true,
+    "use_graph_reasoning": true,
+    "use_cross_encoder": true
+}
