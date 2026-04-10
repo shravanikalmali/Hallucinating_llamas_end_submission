@@ -1,0 +1,18 @@
+{
+  "variant": "Dense Only",
+  "config": {
+    "use_dense": true,
+    "use_bm25": false,
+    "use_mmr": false,
+    "use_graph": false
+  },
+  "overall": {
+    "EM": 0.0,
+    "F1": 0.0,
+    "ROUGE-L": 0.0,
+    "Recall@5": 0.0,
+    "Recall@10": 0.0
+  },
+  "num_questions": 0,
+  "timestamp": "2026-04-10T21:52:30.868734"
+}

@@ -1,0 +1,5 @@
+Question: Where is the last place Phil travels?
+Gold Answer: The Barbados
+Predicted Answer: Bristol
+Confidence: 1.0000
+Reasoning Path: llm_generation_phrase

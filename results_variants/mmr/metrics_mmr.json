@@ -1,0 +1,18 @@
+{
+  "variant": "MMR",
+  "config": {
+    "use_dense": true,
+    "use_bm25": true,
+    "use_mmr": true,
+    "use_graph": false
+  },
+  "overall": {
+    "EM": 0.00986215398408607,
+    "F1": 0.015140574437894232,
+    "ROUGE-L": 0.014988848991985217,
+    "Recall@5": 0.049646979715342376,
+    "Recall@10": 0.049646979715342376
+  },
+  "num_questions": 2955,
+  "timestamp": "2026-04-10T22:01:03.315438"
+}

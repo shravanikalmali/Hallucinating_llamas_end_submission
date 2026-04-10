@@ -1,0 +1,5 @@
+Question: Who stands up for Phil at his trial?
+Gold Answer: The Old One
+Predicted Answer: NOT FOUND
+Confidence: 0.0000
+Reasoning Path: symbolic_miss

@@ -1,0 +1,18 @@
+{
+  "variant": "BM25 Only",
+  "config": {
+    "use_dense": false,
+    "use_bm25": true,
+    "use_mmr": false,
+    "use_graph": false
+  },
+  "overall": {
+    "EM": 0.027,
+    "F1": 0.039895627383041574,
+    "ROUGE-L": 0.03939562738304157,
+    "Recall@5": 0.012,
+    "Recall@10": 0.012
+  },
+  "num_questions": 980,
+  "timestamp": "2026-04-10T22:28:55.458372"
+}

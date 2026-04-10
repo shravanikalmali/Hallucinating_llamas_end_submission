@@ -1,5 +1,5 @@
-Question: Whose forces did Bristol fight?
-Gold Answer: Oliver Cromwell's forces.
-Predicted Answer: Throw
+Question: How does Phil become a member of a pirate crew?
+Gold Answer: The Old One captures the Rose of Devon and kills the captain, and the RoD crew joins the pirates to survive.
+Predicted Answer: NOT FOUND
 Confidence: 0.0000
-Reasoning Path: who_relation_scored
+Reasoning Path: symbolic_miss

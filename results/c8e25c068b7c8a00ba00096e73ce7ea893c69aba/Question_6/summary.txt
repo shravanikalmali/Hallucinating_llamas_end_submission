@@ -1,0 +1,5 @@
+Question: What is the penalty for being found guilty of piracy?
+Gold Answer: Hanging
+Predicted Answer: Sent one and all to the gallows
+Confidence: 1.0000
+Reasoning Path: llm_generation_phrase

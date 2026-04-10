@@ -1,0 +1,18 @@
+{
+  "variant": "Dense Only",
+  "config": {
+    "use_dense": true,
+    "use_bm25": false,
+    "use_mmr": false,
+    "use_graph": false
+  },
+  "overall": {
+    "EM": 0.024678837052062204,
+    "F1": 0.03988172553082299,
+    "ROUGE-L": 0.03962817583508263,
+    "Recall@5": 0.010480054090601758,
+    "Recall@10": 0.010480054090601758
+  },
+  "num_questions": 2552,
+  "timestamp": "2026-04-10T22:19:06.375120"
+}

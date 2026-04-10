@@ -1,0 +1,5 @@
+Question: What war does Phil serve in, and on which side?
+Gold Answer: English Civil War, the Royalists
+Predicted Answer: the King
+Confidence: 0.0000
+Reasoning Path: serve_scored

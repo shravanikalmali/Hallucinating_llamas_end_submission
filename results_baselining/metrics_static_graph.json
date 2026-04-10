@@ -1,0 +1,18 @@
+{
+  "variant": "Static Graph",
+  "config": {
+    "use_dense": true,
+    "use_bm25": true,
+    "use_mmr": true,
+    "use_graph": true
+  },
+  "overall": {
+    "EM": 0.029,
+    "F1": 0.04306229404970824,
+    "ROUGE-L": 0.04256229404970824,
+    "Recall@5": 0.012,
+    "Recall@10": 0.012
+  },
+  "num_questions": 1000,
+  "timestamp": "2026-04-10T22:39:40.966402"
+}

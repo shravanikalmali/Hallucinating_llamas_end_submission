@@ -16,8 +16,8 @@ RETRIEVAL_CONFIG: dict[str, bool] = {
     "use_dense":            True,
     "use_bm25":             True,
     "use_mmr":              True,            # Disable MMR for clean diversity
-    "use_neighbors":        False,
-    "use_graph_expansion":  False,            # Disable expansion to avoid noise
+    "use_neighbors":        True,            # Enabled for full graph awareness
+    "use_graph_expansion":  True,            # Enabled for static graph context
     "use_graph_reasoning":  True,             # Enable multi-hop inference
     "use_hybrid_llm":       False,
     "use_cross_encoder":    True,             # Keep for sentence ranking
@@ -52,8 +52,8 @@ def reset_config() -> None:
         "use_dense": True,
         "use_bm25": True,           # BM25-heavy retrieval
         "use_mmr": True,            # Keep MMR but with high lambda (0.9)
-        "use_neighbors": False,     # No extra noise
-        "use_graph_expansion": False,  # Disable - adds noise
+        "use_neighbors": True,     
+        "use_graph_expansion": True, 
         "use_graph_reasoning": True,   # Enable inference
         "use_hybrid_llm": False,
         "use_cross_encoder": True,  # Sentence re-ranking

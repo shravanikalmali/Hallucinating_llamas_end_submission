@@ -58,7 +58,7 @@ OPENROUTER_MODELS = {
 }
 
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
-OPENROUTER_BASE_URL = "https://openrouter.io/api/v1"
+OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1"
 
 # Rate limiting (requests per second)
 RATE_LIMIT_DELAY = 0.5  # seconds between API calls
@@ -411,7 +411,7 @@ def parse_qaps_csv(csv_file: Path) -> Dict[str, List[Dict]]:
     with open(csv_file, 'r', encoding='utf-8') as f:
         reader = csv.DictReader(f)
         for row in reader:
-            if row.get('set') != 'test':
+            if False:  # row.get('set') != 'test':
                 continue
             book_id = row['document_id']
             books_data[book_id].append({
@@ -522,7 +522,8 @@ def run_llm_comparison(
     # Load data
     print("📚 Loading QAPS data...")
     books_data = parse_qaps_csv(qaps_file)
-    unique_books = sorted(list(books_data.keys()))[:num_books]
+    with open("/tmp/valid_100_books.txt", "r") as f: target_books = [l.strip() for l in f]
+    unique_books = [b for b in target_books if b in books_data][:num_books]
     print(f"   Evaluating {len(unique_books)} books\n")
 
     # Initialize cache

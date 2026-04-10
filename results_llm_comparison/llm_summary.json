@@ -1,0 +1,22 @@
+{
+  "timestamp": "2026-04-10T23:11:48.063981",
+  "num_questions": 125,
+  "num_books": 25,
+  "models": {
+    "gemini": {
+      "match": 0,
+      "partial": 11,
+      "incorrect": 114
+    },
+    "llama": {
+      "match": 0,
+      "partial": 9,
+      "incorrect": 116
+    },
+    "deepseek": {
+      "match": 0,
+      "partial": 11,
+      "incorrect": 114
+    }
+  }
+}
