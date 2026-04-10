@@ -1,0 +1,5 @@
+Question: Whose forces did Bristol fight?
+Gold Answer: Oliver Cromwell's forces.
+Predicted Answer: Throw
+Confidence: 0.0000
+Reasoning Path: who_relation_scored

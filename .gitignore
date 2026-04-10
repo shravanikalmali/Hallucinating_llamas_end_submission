@@ -65,3 +65,5 @@ experiments/results/
 !METRICS_GUIDE.md
 !to_do.md
 !src/**/*.py
+!results/
+!results/**/*

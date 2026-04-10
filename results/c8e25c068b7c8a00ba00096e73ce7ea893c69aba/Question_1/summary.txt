@@ -1,0 +1,5 @@
+Question: Who stands up for Phil at his trial?
+Gold Answer: The Old One
+Predicted Answer: The Old One
+Confidence: 1.0000
+Reasoning Path: llm_generation_phrase
