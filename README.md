@@ -98,11 +98,11 @@ We evaluated the contribution of each component by progressively enabling retrie
 ### LLM Comparison
 Comparison with strong generative models using the same retrieved context for fairness (scaled to 100 books).
 
-| Model | Exact Match (EM) | F1 Score | ROUGE-L |
-| :--- | :--- | :--- | :--- |
-| **Our Model** | **2.19** | **4.54** | **4.51** |
-| LLaMA 3.1 | 0.00 | 0.12 | 0.11 |
-| DeepSeek | 0.00 | 0.14 | 0.13 |
+| Model | F1 Score | ROUGE-L |
+| :--- | :--- | :--- |
+| **Our Model**  | **4.54** | **4.51** |
+| LLaMA 3.1  | 0.12 | 0.11 |
+| DeepSeek  | 0.14 | 0.13 |
 
 ---
 
