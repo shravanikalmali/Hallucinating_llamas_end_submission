@@ -52,16 +52,16 @@ To run the full benchmark across retrieval variants:
 PYTHONPATH=. ./venv/bin/python3 tests/run_all_variants.py
 ```
 
-### 📊 Main Results
+### Main Results
 Our proposed pipeline was evaluated across 706 books and 17,903 questions from the NarrativeQA Gutenberg setting.
 
 | Model | Exact Match (EM) | F1 Score | ROUGE-L |
 | :--- | :--- | :--- | :--- |
-| **Our Model** 🏆 | **2.19** | **4.54** | **4.51** |
+| **Our Model**  | **2.19** | **4.54** | **4.51** |
 
 ---
 
-#### 📈 Per-Question-Type Breakdown
+#### Per-Question-Type Breakdown
 | Type | EM | F1 | Questions | Correct |
 | :--- | :--- | :--- | :--- | :--- |
 | **where** | 2.89 | 4.51 | 1139 | 33 |
@@ -72,7 +72,7 @@ Our proposed pipeline was evaluated across 706 books and 17,903 questions from t
 
 ---
 
-#### 🧠 Reasoning Path Effectiveness
+#### Reasoning Path Effectiveness
 | Reasoning Path | EM | F1 | Questions |
 | :--- | :--- | :--- | :--- |
 | **LLM generation (phrase)** | 3.91 | 7.73 | 8302 |
@@ -82,7 +82,7 @@ Our proposed pipeline was evaluated across 706 books and 17,903 questions from t
 
 ---
 
-### 🔬 Ablation Study
+### Ablation Study
 We evaluated the contribution of each component by progressively enabling retrieval and reasoning modules. 
 
 | Variant | EM | F1 | ROUGE-L | R@5 | R@10 |
@@ -95,7 +95,7 @@ We evaluated the contribution of each component by progressively enabling retrie
 
 ---
 
-### 🤖 LLM Comparison
+### LLM Comparison
 Comparison with strong generative models using the same retrieved context for fairness (scaled to 100 books).
 
 | Model | Exact Match (EM) | F1 Score | ROUGE-L |
@@ -113,5 +113,4 @@ Comparison with strong generative models using the same retrieved context for fa
 *   `src/retrieval/`: The core engine: `hybrid_search.py`, `expansion.py`, and `answer.py`.
 *   `src/config.py`: Global paths, model settings, and OpenRouter API config.
 
-### 💡 Key Insight
-**Structure Outperforms Generative Zero-Shot**: In long-form narratives, structured knowledge graphs provide a better anchor for retrieval than semantic similarity alone. Our pipeline achieves significantly higher Exact Match scores compared to LLMs by strictly constraining the answer space to character and location entities found within the structural map of the book.
+
